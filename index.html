@@ -1,0 +1,239 @@
+<!--Над сайтом работали: Молотков Антон Дмитриевич, Кимсанбоева Нигина Илесовна, Бейтулаева Асият Улубиевна-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Ювелирные изделия</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ОБЩИЕ СТИЛИ */
+        body {
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* ЛАЙК/ДИЗЛАЙК */
+        .reactions {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .like-btn, .dislike-btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .like-btn {
+            background: #28a745;
+            color: white;
+        }
+        
+        .dislike-btn {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .like-btn:hover {
+            background: #218838;
+        }
+        
+        .dislike-btn:hover {
+            background: #c82333;
+        }
+        
+        .reactions-count {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        
+        .social-header {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .hashtag {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .social-title {
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .gallery-section {
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        
+        .gallery-title {
+            color: #333;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .product-image {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 0;
+        }
+        
+        .large-image {
+            width: 400px;
+            height: 200px;
+        }
+        
+        .newsletter-section {
+            background: #000;
+            color: white;
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+        
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .newsletter-subtitle {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+        
+        .benefit-item {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+        
+        .subscribe-form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .email-input {
+            padding: 12px 15px;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #333;
+            color: white;
+        }
+        
+        .email-input::placeholder {
+            color: #999;
+        }
+        
+        .submit-btn {
+            background: #666;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Лайк/Дизлайк -->
+    <div class="reactions">
+        <button class="like-btn" onclick="like()">👍 Лайк</button>
+        <button class="dislike-btn" onclick="dislike()">👎 Дизлайк</button>
+        <div class="reactions-count">
+            Лайков: <span id="likeCount">0</span> | 
+            Дизлайков: <span id="dislikeCount">0</span>
+        </div>
+    </div>
+
+    <!-- Хэштег и соцсети -->
+    <section class="social-header">
+        <div class="hashtag">#ojjo_jewerly</div>
+        <div class="social-title">Мы в социальных сетях</div>
+    </section>
+
+    <!-- Галерея товаров -->
+    <section class="gallery-section">
+        <h1 class="gallery-title">Наши изделия</h1>
+        
+        <div class="gallery-images">
+            <!-- Первая строка -->
+            <img class="product-image large-image" src="img/ring-on-hand.png" alt="Кольцо на руке">
+            <img class="product-image" src="img/rings-and-glasses.png" alt="Кольца и очки">
+            <img class="product-image" src="img/amethyst.png" alt="Аметист">
+            
+            <!-- Вторая строка -->
+            <img class="product-image" src="img/ring-in-box.png" alt="Кольцо в коробке">
+            <img class="product-image" src="img/ring-and-watch.png" alt="Кольцо и часы">
+            <img class="product-image large-image" src="img/ring-video.png" alt="Видео с кольцом">
+        </div>
+    </section>
+
+    <!-- Рассылка на чёрном фоне -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2 class="newsletter-title">Полезные советы и персональные предложения</h2>
+            <h3 class="newsletter-subtitle">Эксклюзивная рассылка</h3>
+            
+            <ul class="benefits-list">
+                <li class="benefit-item">✓ Личный менеджер</li>
+                <li class="benefit-item">✓ Доставка и оформление</li>
+                <li class="benefit-item">✓ Индивидуальный дизайн</li>
+            </ul>
+            
+            <form class="subscribe-form">
+                <input class="email-input" type="email" placeholder="Ваш e-mail">
+                <button class="submit-btn" type="submit">отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        let likes = 0;
+        let dislikes = 0;
+
+        function like() {
+            likes++;
+            document.getElementById('likeCount').textContent = likes;
+        }
+
+        function dislike() {
+            dislikes++;
+            document.getElementById('dislikeCount').textContent = dislikes;
+        }
+    </script>
+</body>
+</html>
